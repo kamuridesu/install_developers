@@ -173,7 +173,7 @@ then
   fi
   printf "Instalação do openjdk-8-jdk...\n\r"
 
-  if ! sudo pacman -Sy --noconfirm openssh-server 
+  if ! sudo pacman -Sy --noconfirm openssh
   then
     printf "Não foi possível instalar o terminal openssh-server\n\r"
     exit 1
