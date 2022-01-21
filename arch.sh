@@ -204,6 +204,13 @@ then
   fi
   printf "Instalação do smbclient...\n\r"
 
+  if ! sudo pacman -Sy --noconfirm wget
+  then
+    printf "Não foi possível instalar o terminal wget\n\r"
+    exit 1
+  fi
+  printf "Instalação do wget...\n\r"
+
   sudo systemctl start sshd
 
   echo "Configuração do IECC iniciada...\n\r"
