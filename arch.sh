@@ -180,7 +180,7 @@ then
   fi
   printf "Instalação do openssh-server...\n\r"
   
-  if ! sudo pacman -Sy --noconfirm wireguard 
+  if ! sudo pacman -Sy --noconfirm wireguard-tools 
   then
     printf "Não foi possível instalar o terminal wireguard\n\r"
     exit 1
