@@ -76,7 +76,7 @@ then
 
 
   # driver para conectar ao sql server, postgresql
-  if ! sudo pacman -Sy --noconfirm unixodbc unixodbc freetds freetds-bin postgresql 
+  if ! sudo pacman -Sy --noconfirm unixodbc unixodbc freetds postgresql 
   then
       printf "Não foi possível instalar os drivers para conectar ao sql server, postgresql\n\r"
       exit 1
