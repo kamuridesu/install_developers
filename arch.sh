@@ -130,19 +130,12 @@ then
   fi
   printf "Entrada na pasta do yay finalizada...\n\r"
 
-  if ! su - kamuri -c "makepkg -si"
+  if ! makepkg -si
   then
     printf "Não foi possível instalar o yay\n\r"
     exit 1
   fi
   printf "Instalação do yay finalizada...\n\r"
-
-  if ! exit
-  then
-    printf "Não foi possível sair da pasta do yay\n\r"
-    exit 1
-  fi
-  printf "Saida da pasta do yay finalizada...\n\r"
 
   if ! cd ..
   then
