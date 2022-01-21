@@ -67,7 +67,7 @@ then
 
 
   # compiladores do c++
-  if ! sudo pacman -Sy --noconfirm build-essential 
+  if ! sudo pacman -Sy --noconfirm base-devel
   then
       printf "Não foi possível instalar o pacote build-essential\n\r"
       exit 1
