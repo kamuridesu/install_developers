@@ -204,9 +204,11 @@ then
   fi
   printf "Instalação do smbclient...\n\r"
 
-  sudo service ssh start
+  sudo systemctl start sshd
 
   echo "Configuração do IECC iniciada...\n\r"
+  sudo mkdir /etc/icecc
+  sudo touch /etc/icecc/icecc.conf
   sudo sed -i 's/ICECC_NETNAME=""/ICECC_NETNAME="node"/' /etc/icecc/icecc.conf
 
 
