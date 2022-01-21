@@ -130,7 +130,7 @@ then
   fi
   printf "Entrada na pasta do yay finalizada...\n\r"
 
-  if ! makepkg -si
+  if ! makepkg -si --noconfirm
   then
     printf "Não foi possível instalar o yay\n\r"
     exit 1
