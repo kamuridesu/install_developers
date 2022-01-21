@@ -11,25 +11,20 @@
 
 function usage() {
 
-   if ! sudo pacman -Q 2> /dev/null | grep -i toilet
-   then
-    sudo pacman -Sy --noconfirm toilet 
-   fi
-
    if ! sudo pacman -Q 2> /dev/null | grep -i figlet
    then
     sudo pacman -Sy --noconfirm figlet 
    fi
    
 
-   toilet -f smmono9 -F metal "DevInstaller"
+   echo "DevInstaller"
 
-   toilet -f term -F crop $(basename "$0")' [-h] [-k] [-s n] [QT_VERSION] -- script for basic installation of It Happens development environment.'
+   echo $(basename "$0")' [-h] [-k] [-s n] [QT_VERSION] -- script for basic installation of It Happens development environment.'
 
-   toilet -f term -F crop 'where:'
-   toilet -f term -F crop '     -h  show this help text'
-   toilet -f term -F crop '     -k  create key ssh to access to git.mateus'
-   toilet -f term -F crop 'QT_VERSION  set the QT version that you will use. Example, to QT VERSION 5.9.3, so execute: ./install 5.9.3'
+   echo 'where:'
+   echo '     -h  show this help text'
+   echo '     -k  create key ssh to access to git.mateus'
+   echo 'QT_VERSION  set the QT version that you will use. Example, to QT VERSION 5.9.3, so execute: ./install 5.9.3'
 
 }
 
