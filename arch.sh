@@ -116,12 +116,48 @@ then
   fi
   printf "Instalação do go finalizada...\n\r"
 
-  if ! git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay && yay -S --noconfirm icemon icecream
+  if ! git clone https://aur.archlinux.org/yay.git
   then
-    printf "Não foi possível instalar o icemon e o icecream\n\r"
+    printf "Não foi possível clonar o yay\n\r"
     exit 1
   fi
-  printf "Instalação do icemon e do icecream finalizada...\n\r"
+  printf "Clone do yay finalizada...\n\r"
+
+  if ! cd yay
+  then
+    printf "Não foi possível entrar na pasta do yay\n\r"
+    exit 1
+  fi
+  printf "Entrada na pasta do yay finalizada...\n\r"
+
+  if ! makepkg -si
+  then
+    printf "Não foi possível instalar o yay\n\r"
+    exit 1
+  fi
+  printf "Instalação do yay finalizada...\n\r"
+
+  if ! cd ..
+  then
+    printf "Não foi possível entrar na pasta raiz\n\r"
+    exit 1
+  fi
+  printf "Entrada na pasta raiz finalizada...\n\r"
+
+  if ! rm -rf yay
+  then
+    printf "Não foi possível remover a pasta yay\n\r"
+    exit 1
+  fi
+  printf "Remoção da pasta yay finalizada...\n\r"
+
+  # instalar o icecc - compilação distribuida
+  if ! sudo pacman -Sy --noconfirm icemon icecream
+  then
+    printf "Não foi possível instalar o icecc\n\r"
+    exit 1
+  fi
+
 
   # sistema de controle de versões
   if ! sudo pacman -Sy --noconfirm git
