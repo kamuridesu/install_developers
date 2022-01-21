@@ -84,12 +84,12 @@ then
   printf "Instalação dos drivers sqlserver, postgresql finalizada...\n\r"
 
   # stack trace do compilador do c++
-  if ! sudo pacman -Sy --noconfirm libx11-xcb-dev libdw1 libdw-dev libgl-dev 
+  if ! sudo pacman -Sy --noconfirm libx11 libdwarf libglvnd 
   then
-    printf "Não foi possível instalar as libs libdw1 libdw-dev libgl-dev \n\r"
+    printf "Não foi possível instalar as libs libx11 libdwarf libglvnd  \n\r"
     exit 1
   fi
-  printf "Instalação das libs libdw1 libdw-dev finalizada...\n\r"
+  printf "Instalação das libs libx11 libdwarf libglvnd finalizada...\n\r"
 
   # bibliotecas para exibição de gráficos opengl para o qtcreator funcionar a compilação
   if ! sudo pacman -Sy --noconfirm libgl1-mesa-dev qtdeclarative5-dev qml-module-qtquick-controls2 
