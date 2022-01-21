@@ -109,12 +109,19 @@ then
   printf "Instalação dos basic software support foi finalizada...\n\r"
 
   # instalar o icecc - compilação distribuida
-  if ! sudo pacman -Sy --noconfirm git go && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay && yay -S --noconfirm icemon icecream
+  if ! sudo pacman -Sy --noconfirm git go
   then
-    printf "Não foi possível instalar o icecc\n\r"
+    printf "Não foi possível instalar o go\n\r"
     exit 1
   fi
-  printf "Instalação do icecc finalizada...\n\r"
+  printf "Instalação do go finalizada...\n\r"
+
+  if ! git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay && yay -S --noconfirm icemon icecream
+  then
+    printf "Não foi possível instalar o icemon e o icecream\n\r"
+    exit 1
+  fi
+  printf "Instalação do icemon e do icecream finalizada...\n\r"
 
   # sistema de controle de versões
   if ! sudo pacman -Sy --noconfirm git
