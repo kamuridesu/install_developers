@@ -109,35 +109,20 @@ then
   printf "Instalação dos basic software support foi finalizada...\n\r"
 
   # instalar o icecc - compilação distribuida
-  if ! sudo pacman -Sy --noconfirm icecc 
+  if ! sudo pacman -Sy --noconfirm git go && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay && yay -S --noconfirm icemon icecream
   then
     printf "Não foi possível instalar o icecc\n\r"
     exit 1
   fi
   printf "Instalação do icecc finalizada...\n\r"
 
-  # instalaca  do sublime
-  if ! sudo pacman -Sy --noconfirm sublime-text 
-  then
-    printf "Não foi possível instalar o sublime\n\r"
-    exit 1
-  fi
-  printf "Instalação do sublime finalizada...\n\r"
-
   # sistema de controle de versões
-  if ! sudo pacman -Sy --noconfirm git-all 
+  if ! sudo pacman -Sy --noconfirm git
   then
     printf "Não foi possível instalar o git\n\r"
     exit 1
   fi
   printf "Instalação do git finalizada...\n\r"
-
-  if ! sudo pacman -Sy --noconfirm libkf5globalaccel-bin yakuake 
-  then
-    printf "Não foi possível instalar o terminal yakuake\n\r"
-    exit 1
-  fi
-  printf "Instalação do git yakuake...\n\r"
 
   if ! sudo pacman -Sy --noconfirm htop 
   then
