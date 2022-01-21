@@ -152,7 +152,7 @@ then
   printf "Remoção da pasta yay finalizada...\n\r"
 
   # instalar o icecc - compilação distribuida
-  if ! sudo yay -Sy --noconfirm icemon icecream
+  if ! yay -Sy --noconfirm icemon icecream
   then
     printf "Não foi possível instalar o icecc\n\r"
     exit 1
