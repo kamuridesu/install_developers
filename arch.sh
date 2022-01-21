@@ -92,7 +92,7 @@ then
   printf "Instalação das libs libx11 libdwarf libglvnd finalizada...\n\r"
 
   # bibliotecas para exibição de gráficos opengl para o qtcreator funcionar a compilação
-  if ! sudo pacman -Sy --noconfirm libgl1-mesa-dev qtdeclarative5-dev qml-module-qtquick-controls2 
+  if ! sudo pacman -Sy --noconfirm mesa libxpm qt5-declarative qt5-quickcontrols2
   then
     printf "Não foi possível instalar as bibliotecas para exibição gráficas\n\r"
     exit 1
